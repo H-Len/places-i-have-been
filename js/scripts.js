@@ -5,6 +5,7 @@ function TravelList() {
 }
 
 TravelList.prototype.addPlace = function(place) {
+  place.id = this.assignId();
   this.places.push(place);
 }
 
@@ -22,3 +23,29 @@ function Place(city, country, date) {
 Place.prototype.visit = function() {
   return this.city + ", " + this.country;
 }
+
+
+TravelList.prototype.findPlace = function(id) {
+  for (var i=0; i < this.places.length; i++) {
+    if (this.places[i] && this.places[i].id === id) {
+        return this.places[i];
+    }
+  };
+  return false;
+}
+
+
+TravelList.prototype.deletePlaces = function(id) {
+  for (var i=0; i < this.places.length; i++) {
+    if (this.places[i] && this.places[i].id === id) {
+      delete this.places[i];
+      return true;
+    }
+  };
+  return false;
+}
+
+//user interface
+$(function() {
+  
+});
