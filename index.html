@@ -9,7 +9,37 @@
   <script src="js/scripts.js"></script>
   <title>Places I've Been</title>
 </head>
-<body>
+<body class="container">
+  <h1>Places I've been</h1>
+  <form class="row">
+    <div class="col-4">
+      <div class="question">
+        <label for="city">What city have you visited?</label>
+        <input type="text" name="city" id="city">
+      </div>
+    </div>
 
+    <div class="col-4">
+      <div class="question">
+        <label for="country">What country was that city in?</label>
+        <input type="text" name="country" id="country">
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="question">
+        <label for="date">What date did you go on this trip?</label>
+        <input type="date" name="date" id="date">
+      </div>
+    </div>
+    <div class="button">
+      <button type="submit" name="button" class="btn btn-dark">Add to the list!</button>
+
+    </div>
+  </form>
+  <div class="list">
+    
+
+  </div>
 </body>
 </html>

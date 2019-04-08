@@ -47,5 +47,20 @@ TravelList.prototype.deletePlaces = function(id) {
 
 //user interface
 $(function() {
-  
+  var travelList = new TravelList;
+  $("form").submit(function(event){
+    event.preventDefault();
+    var cityInput = $("input#city").val();
+    var countryInput = $("input#country").val();
+    var dateInput = $("input#date").val();
+
+    if (!cityInput || !countryInput || !dateInput) {
+      alert("please fill in all fields.");
+    }
+    var place = new Place(cityInput, countryInput, dateInput);
+    travelList.addPlace(place);
+
+    $('.list').append('<p>You went to ' + cityInput + ', ' + countryInput + ' on ' + dateInput + '!!!</p>');
+    console.log(travelList);
+  });
 });
